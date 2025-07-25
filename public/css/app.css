@@ -1,0 +1,368 @@
+body.chili-bg {
+    min-height: 100vh;
+    background: #e05a5a url('../images/background.png') repeat;
+    background-size: cover;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-top: 110px;
+}
+
+.header {
+    background: #c4c4c4;
+    border-radius: 0 0 10px 10px;
+    padding: 20px 0 10px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 4px 18px #0002;
+    background: #c4c4c4ee;
+}
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-left: 18px;
+}
+.logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+.upload-section, .result-section {
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    padding: 24px 20px 20px 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.upload-label, .result-label {
+    font-weight: 600;
+    color: #444;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: block;
+}
+.upload-box {
+    border: 2px dashed #bbb;
+    border-radius: 10px;
+    padding: 40px 0;
+    text-align: center;
+    background: #f5f7fa;
+    position: relative;
+}
+.upload-input {
+    display: none;
+}
+.upload-btn {
+    display: inline-block;
+    background: none;
+    color: #666;
+    font-size: 1.1rem;
+    padding: 18px 0;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: color 0.2s;
+}
+.upload-btn:hover {
+    color: #e05a5a;
+    font-weight: 600;
+}
+
+.result-box {
+    min-height: 120px;
+    background: #f5f7fa;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 1.1rem;
+    padding: 30px 10px;
+    text-align: center;
+    border: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    transition: border 0.3s, box-shadow 0.3s;
+}
+.waiting-text {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+.result-text {
+    margin-top: 8px;
+    min-height: 70px;
+    transition: all 0.3s;
+    opacity: 0;
+    transform: scale(0.97);
+}
+.result-text.show-result {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.4s cubic-bezier(.4,2,.6,1.2);
+}
+.result-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+.result-emoji {
+    font-size: 2.2rem;
+    margin-right: 6px;
+    filter: drop-shadow(0 2px 2px #fff3);
+}
+.result-label-main {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.result-badge {
+    display: inline-block;
+    padding: 7px 22px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 2px 8px #0001;
+    margin-top: 2px;
+    letter-spacing: 1px;
+}
+
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    padding-bottom: 18px;
+    text-shadow: 0 1px 2px #b33b3b;
+}
+
+.howto-btn {
+    margin-left: 24px;
+    background: #e05a5a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #e05a5a22;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.howto-btn:hover {
+    background: #b33b3b;
+    box-shadow: 0 4px 16px #e05a5a33;
+}
+
+.howto-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.25);
+    justify-content: center;
+    align-items: center;
+}
+.howto-modal-content {
+    background: #fff;
+    border-radius: 14px;
+    max-width: 420px;
+    margin: 60px auto;
+    padding: 32px 28px 22px 28px;
+    box-shadow: 0 8px 32px #e05a5a33;
+    position: relative;
+    animation: fadeInScale 0.3s;
+}
+.howto-modal-content h2 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    color: #e05a5a;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.howto-modal-content ol {
+    margin: 0 0 10px 18px;
+    padding: 0;
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+.howto-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 1.5rem;
+    color: #e05a5a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.howto-close:hover {
+    color: #b33b3b;
+}
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+@media (max-width: 600px) {
+    .howto-modal-content {
+        max-width: 95vw;
+        padding: 18px 8vw 14px 8vw;
+    }
+    .howto-btn { margin-left: 8px; font-size: 0.95rem; padding: 7px 10px; }
+}
+
+@media (max-width: 700px) {
+    .header { padding: 12px 0 8px 0; }
+    .logo { width: 48px; height: 48px; }
+    .title { font-size: 1.1rem; }
+    .container { padding: 0 4px; padding-top: 80px; }
+    .upload-section, .result-section { padding: 14px 6px 12px 6px; }
+    .footer { font-size: 0.85rem; }
+    .result-main { font-size: 1.1rem; }
+    .result-emoji { font-size: 1.4rem; }
+    .result-label-main { font-size: 1rem; }
+    .result-badge { font-size: 0.95rem; padding: 5px 14px; }
+}
+
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+    margin-bottom: 8px;
+}
+.spinner {
+    border: 4px solid #eee;
+    border-top: 4px solid #e05a5a;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 8px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.loading-text {
+    color: #e05a5a;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+}
+
+.share-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 10px;
+}
+.wa-share, .tg-share {
+    background: #f5f7fa;
+    color: #444;
+    border: 1.5px solid #e05a5a;
+    border-radius: 8px;
+    padding: 7px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.wa-share:hover {
+    background: #25d366;
+    color: #fff;
+    border-color: #25d366;
+}
+.tg-share:hover {
+    background: #229ed9;
+    color: #fff;
+    border-color: #229ed9;
+}
+
+.history-section {
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    padding: 18px 20px 18px 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.history-label {
+    font-weight: 600;
+    color: #444;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: block;
+}
+.history-list {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+.history-item {
+    background: #f5f7fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #0001;
+    padding: 10px 10px 8px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 110px;
+    max-width: 120px;
+    min-height: 120px;
+}
+.history-thumb {
+    width: 70px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 7px;
+    margin-bottom: 7px;
+    box-shadow: 0 1px 4px #e05a5a22;
+}
+.history-result {
+    font-size: 0.95rem;
+    text-align: center;
+    min-height: 32px;
+}
+.history-empty {
+    color: #aaa;
+    font-size: 1rem;
+    padding: 10px 0;
+}
+
+@media (max-width: 700px) {
+    .history-list { gap: 8px; }
+    .history-item { min-width: 80px; max-width: 90px; padding: 7px 4px 6px 4px; }
+    .history-thumb { width: 48px; height: 38px; }
+    .history-result { font-size: 0.8rem; }
+}
